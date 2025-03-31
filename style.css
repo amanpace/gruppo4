@@ -1,0 +1,230 @@
+
+
+
+
+html{
+    min-height: 100vh; /* L'altezza minima è il 100% della viewport */
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+header{
+    background-color: rgb(255, 246, 238);
+    color: rgb(225, 224, 138);
+    position: fixed;
+    top: 0;
+    /* padding: 10px; */
+    height: 70px;
+    width: 100%;
+}
+.navbar {
+    padding: 25px;
+    display: flex;
+    font-size: 18px;
+    font-family: 'Arial Narrow Bold', sans-serif;
+    gap: 10px;
+    text-align: center;
+}
+.navbar a {
+    color: rgb(22, 21, 21);
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+/* Contenitore per le bandiere */
+.language-switcher {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+}
+
+/* Stile per le bandiere */
+.language-switcher .flag-icon {
+    font-size: 24px; /* Grandezza delle icone */
+    cursor: pointer;
+}
+
+
+footer{       
+    background-color: rgb(255, 246, 238);
+    color: black;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+}
+
+footer p {
+    margin-left: 300px;
+    text-align: center; /* Centra il testo al suo interno */
+    flex-grow: 1; /*Permette alla scritta di espandersi e centrarsi*/
+}
+
+#weblab{
+    margin-top: 0px;
+    /* text-align: center; */
+    
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(255,175,46);
+}
+main{
+    width: 100%; /* Occupa tutta la larghezza disponibile */
+    background-color: rgb(255, 246, 238);
+    padding: 20px;
+}
+.content {
+    display: flex;
+    text-align: center;
+    /* align-items: center; */
+    /*text-align: center;
+    max-width: 800px;*/
+}
+#title{
+    flex-grow: 1;  /* Occupa tutto lo spazio disponibile */
+    text-align: left; /*Mantiene il testo a sinistra*/
+    font-size: 50px;
+    /* font-weight: bold; */
+    color: rgb(22, 21, 21);
+    padding: 20px;
+    margin-top: 120px;
+    white-space: normal;
+    max-width: 70%;
+}
+#title h1 {
+    white-space: nowrap; /* Impedisce il ritorno a capo */
+    font-size:3rem; 
+}
+
+#title p {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    color: rgb(57, 56, 56);
+    /* font-family: Arial, Helvetica, sans-serif; */
+    /* font-weight: 200; */
+    /* font-family: 'Courier New', Courier, monospace; */
+}
+
+#team-image img{
+    padding: 60px;
+    height: 496px;
+    width: 636px;
+    object-fit: cover;
+}
+
+.content2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 40px;
+    /* padding: 10px; */
+}
+.content3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.content3 h2{
+    font-size: 1.8rem;
+}
+
+.content4{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px; /* Spazio tra gli elementi */
+    text-align: center;
+    padding: 20px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.content4 p{
+    font-weight: bold;
+}
+
+.grid-item img {
+    width: auto; /* Mantieni le proporzioni */
+    height: auto; /* Mantieni le proporzioni */
+}
+
+.spazio{
+    height: 100px; /* Spazio tra le righe */
+}
+
+.spazio2{
+    width: 250px; /* Spazio tra le righe */
+}
+
+.spazio3{
+    width: 450px; /* Spazio tra le righe */
+}
+
+.sostituisci{
+    height: 500px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: flex-end; /* Allinea le icone a destra */
+    padding: 20px;
+}
+
+
+/* Stile per ogni icona */
+.social-icons .fa {
+    padding: 10px;
+    font-size: 24px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    margin: 0 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Colori di sfondo per ogni icona */
+.social-icons .fa-facebook {
+    background: #3b5998;
+    color: white;
+}
+
+.social-icons .fa-twitter {
+    background: #55acee;
+    color: white;
+}
+
+.social-icons .fa-instagram {
+    background: #e4405f;
+    color: white;
+}
+
+.social-icons .fa-linkedin {
+    background: #0077b5;
+    color: white;
+}
+
+/* Effetto hover */
+.social-icons .fa:hover {
+    opacity: 0.7;
+}
+
+.content6{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+
+
+.spacer {
+    flex-grow: 1;
+}
