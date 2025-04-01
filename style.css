@@ -228,3 +228,196 @@ main{
 .spacer {
     flex-grow: 1;
 }
+/* Stili generali per dispositivi mobili */
+@media (max-width: 768px) {
+    header {
+        height: auto; /* Adatta l'altezza dell'header */
+        padding: 10px;
+    }
+
+    main {
+        margin-top: 100px; /* Aumenta il margine per dispositivi mobili */
+    }
+
+    .navbar {
+        flex-direction: column; /* Disposizione verticale per il menu */
+        text-align: center;
+        gap: 15px;
+    }
+
+    .navbar a {
+        margin: 5px 0; /* Spaziatura tra i link */
+    }
+
+    #title {
+        font-size: 1.8rem; /* Riduci la dimensione del titolo */
+        text-align: center; /* Centra il testo */
+        margin-top: 80px;
+        padding: 10px;
+    }
+
+    #title h1 {
+        font-size: 2rem; /* Riduci ulteriormente il titolo */
+    }
+
+    #team-image img {
+        width: 100%; /* Adatta l'immagine alla larghezza dello schermo */
+        height: auto; /* Mantieni le proporzioni */
+        padding: 20px;
+    }
+
+    .content4 {
+        grid-template-columns: repeat(2, 1fr); /* Due colonne per tablet */
+        padding: 10px;
+    }
+
+    .content6 {
+        font-size: 1rem; /* Riduci la dimensione del testo */
+        padding: 10px;
+    }
+
+    footer {
+        flex-direction: column; /* Disposizione verticale per il footer */
+        text-align: center;
+        padding: 20px;
+    }
+
+    footer p {
+        margin: 10px 0;
+    }
+
+    .social-icons {
+        justify-content: center; /* Centra le icone social */
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .content4 {
+        grid-template-columns: repeat(1, 1fr); /* Una colonna per smartphone */
+        padding: 5px;
+    }
+
+    .navbar {
+        font-size: 16px; /* Riduci la dimensione del testo del menu */
+    }
+
+    #title {
+        font-size: 1.5rem; /* Riduci ulteriormente il titolo */
+        margin-top: 50px;
+    }
+
+    #title h1 {
+        font-size: 1.8rem;
+    }
+
+    .spazio {
+        height: 50px; /* Riduci lo spazio verticale */
+    }
+
+    .spazio2, .spazio3 {
+        width: 100%; /* Adatta gli spazi alla larghezza dello schermo */
+    }
+
+    .social-icons .fa {
+        font-size: 20px; /* Riduci la dimensione delle icone */
+        width: 40px;
+        height: 40px;
+    }
+}/* Stili generali per dispositivi mobili */
+@media (max-width: 768px) {
+    header {
+        height: auto; /* Adatta l'altezza dell'header */
+        padding: 10px;
+    }
+
+    main {
+        margin-top: 100px; /* Aumenta il margine per dispositivi mobili */
+    }
+
+    .navbar {
+        flex-direction: column; /* Disposizione verticale per il menu */
+        text-align: center;
+        gap: 15px;
+    }
+
+    .navbar a {
+        margin: 5px 0; /* Spaziatura tra i link */
+    }
+
+    #title {
+        font-size: 1.8rem; /* Riduci la dimensione del titolo */
+        text-align: center; /* Centra il testo */
+        margin-top: 80px;
+        padding: 10px;
+    }
+
+    #title h1 {
+        font-size: 2rem; /* Riduci ulteriormente il titolo */
+    }
+
+    #team-image img {
+        width: 100%; /* Adatta l'immagine alla larghezza dello schermo */
+        height: auto; /* Mantieni le proporzioni */
+        padding: 20px;
+    }
+
+    .content4 {
+        grid-template-columns: repeat(2, 1fr); /* Due colonne per tablet */
+        padding: 10px;
+    }
+
+    .content6 {
+        font-size: 1rem; /* Riduci la dimensione del testo */
+        padding: 10px;
+    }
+
+    footer {
+        flex-direction: column; /* Disposizione verticale per il footer */
+        text-align: center;
+        padding: 20px;
+    }
+
+    footer p {
+        margin: 10px 0;
+    }
+
+    .social-icons {
+        justify-content: center; /* Centra le icone social */
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .content4 {
+        grid-template-columns: repeat(1, 1fr); /* Una colonna per smartphone */
+        padding: 5px;
+    }
+
+    .navbar {
+        font-size: 16px; /* Riduci la dimensione del testo del menu */
+    }
+
+    #title {
+        font-size: 1.5rem; /* Riduci ulteriormente il titolo */
+        margin-top: 50px;
+    }
+
+    #title h1 {
+        font-size: 1.8rem;
+    }
+
+    .spazio {
+        height: 50px; /* Riduci lo spazio verticale */
+    }
+
+    .spazio2, .spazio3 {
+        width: 100%; /* Adatta gli spazi alla larghezza dello schermo */
+    }
+
+    .social-icons .fa {
+        font-size: 20px; /* Riduci la dimensione delle icone */
+        width: 40px;
+        height: 40px;
+    }
+}
