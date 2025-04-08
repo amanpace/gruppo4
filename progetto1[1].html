@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Centrato sull'Utente per Servizi Pubblici</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .floating {
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .step-card {
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+        
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #3b82f6;
+        }
+        
+        .benefit-card {
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,255,255,0.95));
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50 text-gray-800">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex space-x-7">
+                    <div>
+                        <a href="#" class="flex items-center">
+                            <span class="text-xl font-bold gradient-text">UX Public Services</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Nav Items -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#intro" class="text-indigo-600 font-medium">Introduzione</a>
+                    <a href="#pillars" class="text-gray-600 hover:text-indigo-600 transition">Pilastri</a>
+                    <a href="#benefits" class="text-gray-600 hover:text-indigo-600 transition">Vantaggi</a>
+                    <a href="#process" class="text-gray-600 hover:text-indigo-600 transition">Processo</a>
+                    <a href="#contact" class="text-gray-600 hover:text-indigo-600 transition">Contatti</a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button class="outline-none mobile-menu-button">
+                        <svg class="w-6 h-6 text-gray-600" fill="none" stroke-linecap="round" 
+                            stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                            <path d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="hidden mobile-menu bg-white border-t">
+            <ul>
+                <li><a href="#intro" class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-50">Introduzione</a></li>
+                <li><a href="#pillars" class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-50">Pilastri</a></li>
+                <li><a href="#benefits" class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-50">Vantaggi</a></li>
+                <li><a href="#process" class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-50">Processo</a></li>
+                <li><a href="#contact" class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-50">Contatti</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="intro" class="parallax bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-20 lg:py-32">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">
+                        <span class="gradient-text">Design Centrato sull'Utente</span><br>
+                        nei Servizi Pubblici Digitali
+                    </h1>
+                    <p class="text-xl md:text-2xl mb-8 opacity-90">
+                        Migliorare l'esperienza digitale nei servizi pubblici attraverso strategie di design e innovazione centrati sull'utente
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#process" class="bg-white text-indigo-600 px-6 py-3 rounded-full font-semibold text-lg hover:bg-gray-100 transition duration-300 transform hover:scale-105 shadow-lg text-center">
+                            Scopri il Processo
+                        </a>
+                        <a href="#contact" class="bg-transparent border-2 border-white text-white px-6 py-3 rounded-full font-semibold text-lg hover:bg-white hover:text-indigo-600 transition duration-300 transform hover:scale-105 text-center">
+                            Contattaci
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Hero Image" class="rounded-lg shadow-2xl max-w-full h-auto floating object-cover" style="height: 350px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">UX Digitale nel Settore Pubblico</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
+            </div>
+            
+            <div class="bg-indigo-50 p-8 rounded-xl shadow-sm">
+                <p class="text-lg text-gray-700 mb-6">
+                    Comprendere le sfumature dell'UX digitale nelle entità governative è cruciale per offrire servizi senza soluzione di continuità, accessibili e centrati sul cittadino. L'UX digitale nel settore pubblico enfatizza il design centrato sull'utente, garantendo che i cittadini abbiano interazioni intuitive e accessibili con i servizi governativi.
+                </p>
+                <p class="text-lg text-gray-700">
+                    <span class="font-semibold text-indigo-700">"Implementare una migliore pianificazione riguardo all'esperienza utente è fondamentale per servizi pubblici efficaci."</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pillars Section -->
+    <section id="pillars" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">I Pilastri Fondamentali</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">I componenti fondamentali dell'UX digitale nei servizi pubblici</p>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
+            </div>
+            
+            <div class="pillars-grid">
+                <!-- Pillar 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-universal-access text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-3">Accessibilità</h3>
+                    <p class="text-gray-600 text-center">
+                        Garantire che i servizi digitali siano accessibili a gruppi diversificati di utenti, inclusi quelli con disabilità, per favorire l'inclusività.
+                    </p>
+                </div>
+                
+                <!-- Pillar 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-users text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-3">Inclusività</h3>
+                    <p class="text-gray-600 text-center">
+                        Progettare per tutti, considerando diversità culturali, linguistiche, di abilità e di accesso alla tecnologia.
+                    </p>
+                </div>
+                
+                <!-- Pillar 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-mouse-pointer text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-3">Interfacce Intuitive</h3>
+                    <p class="text-gray-600 text-center">
+                        Progettare interfacce che semplifichino la navigazione e l'usabilità per i cittadini che interagiscono con le piattaforme governative.
+                    </p>
+                </div>
+                
+                <!-- Pillar 4 -->
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-file-alt text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center mb-3">Contenuti Chiari</h3>
+                    <p class="text-gray-600 text-center">
+                        Fornire contenuti pertinenti e di facile comprensione che rispondano alle esigenze e alle domande dei cittadini.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Vantaggi del Design Centrato sull'Utente</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Perché investire in una buona UX per i servizi pubblici</p>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Benefit 1 -->
+                <div class="benefit-card p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-indigo-100 p-2 rounded-full mr-4">
+                            <i class="fas fa-handshake text-indigo-600"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold">Engagement Civico</h3>
+                    </div>
+                    <p class="text-gray-600">
+                        Un'esperienza digitale positiva favorisce l'engagement dei cittadini, incoraggiando la partecipazione attiva e l'interazione con i servizi governativi.
+                    </p>
+                </div>
+                
+                <!-- Benefit 2 -->
+                <div class="benefit-card p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-indigo-100 p-2 rounded-full mr-4">
+                            <i class="fas fa-shield-alt text-indigo-600"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold">Costruzione di Fiducia</h3>
+                    </div>
+                    <p class="text-gray-600">
+                        Un'UX digitale di qualità coltiva la fiducia tra i cittadini, rafforzando la fiducia nei confronti dei servizi governativi e la trasparenza.
+                    </p>
+                </div>
+                
+                <!-- Benefit 3 -->
+                <div class="benefit-card p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-indigo-100 p-2 rounded-full mr-4">
+                            <i class="fas fa-bolt text-indigo-600"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold">Efficienza Operativa</h3>
+                    </div>
+                    <p class="text-gray-600">
+                        Un'UX digitale efficiente ottimizza i processi, riducendo i carichi amministrativi e ottimizzando l'allocazione delle risorse.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-indigo-50 p-8 rounded-lg">
+                <p class="text-lg text-gray-700">
+                    <span class="font-semibold text-indigo-700">In definitiva</span>, migliorare la coerenza e la qualità dell'esperienza digitale può potenziare l'engagement, la soddisfazione e la percezione dell'efficacia dei cittadini. Le agenzie beneficeranno di cittadini più soddisfatti e di costi ridotti associati a esperienze self-service migliori. Priorizzando il design UX, le agenzie del settore pubblico possono creare servizi digitali efficaci e user-friendly.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Processo di Design Centrato sull'Utente</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Metodologia strutturata per servizi pubblici digitali efficaci</p>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 gap-12 max-w-4xl mx-auto">
+                <!-- Step 1 -->
+                <div class="step-card bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-start">
+                        <div class="bg-indigo-600 text-white rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 mr-4 font-bold">01</div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3">Pianificazione Strutturale</h3>
+                            <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                                <li><span class="font-medium">Definizione degli Obiettivi:</span> Outline chiaro degli obiettivi e degli esiti desiderati del progetto.</li>
+                                <li><span class="font-medium">Identificazione degli Stakeholder:</span> Identificare tutti gli stakeholder rilevanti, inclusi cittadini, funzionari governativi e team tecnici.</li>
+                                <li><span class="font-medium">Allocazione delle Risorse:</span> Determinare le risorse necessarie, inclusi budget, personale e tecnologia.</li>
+                                <li><span class="font-medium">Creazione di una Timeline:</span> Sviluppare una timeline realistica con milestone e scadenze.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="step-card bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-start">
+                        <div class="bg-indigo-600 text-white rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 mr-4 font-bold">02</div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3">Ricerca e Identificazione dei Problemi</h3>
+                            <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                                <li><span class="font-medium">Ricerca Utente:</span> Condurre sondaggi, interviste e focus group per comprendere le esigenze e i punti critici degli utenti finali.</li>
+                                <li><span class="font-medium">Analisi dei Dati:</span> Analizzare i dati raccolti per identificare problematiche comuni e aree di miglioramento.</li>
+                                <li><span class="font-medium">Benchmarking:</span> Confrontare con le best practices e i casi di studio di successo di altri progetti nel settore pubblico.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="step-card bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-start">
+                        <div class="bg-indigo-600 text-white rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 mr-4 font-bold">03</div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3">Approccio Centrato sull'Utente</h3>
+                            <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                                <li><span class="font-medium">Sviluppo delle Persona:</span> Creare personaggi dettagliati che rappresentino diversi gruppi di utenti per guidare le decisioni di design.</li>
+                                <li><span class="font-medium">Mappatura del Percorso:</span> Mappare il percorso dell'utente per identificare punti di contatto e ostacoli potenziali.</li>
+                                <li><span class="font-medium">Prototipazione:</span> Sviluppare prototipi e condurre test di usabilità per raccogliere feedback e affinare i design.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 4 -->
+                <div class="step-card bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-start">
+                        <div class="bg-indigo-600 text-white rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 mr-4 font-bold">04</div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3">Sicurezza e Costruzione della Fiducia</h3>
+                            <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                                <li><span class="font-medium">Protezione dei Dati:</span> Implementare robuste misure di sicurezza per salvaguardare i file digitali e gli asset dei cittadini.</li>
+                                <li><span class="font-medium">Misure di Trasparenza:</span> Garantire una comunicazione chiara riguardo all'uso dei dati, alle politiche sulla privacy e ai protocolli di sicurezza.</li>
+                                <li><span class="font-medium">Meccanismi di Feedback:</span> Stabilire canali per consentire agli utenti di fornire feedback e segnalare problemi.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 5 -->
+                <div class="step-card bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-start">
+                        <div class="bg-indigo-600 text-white rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 mr-4 font-bold">05</div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3">Implementazione e Monitoraggio</h3>
+                            <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                                <li><span class="font-medium">Sviluppo Agile:</span> Utilizzare metodologie agili per sviluppare e migliorare iterativamente i servizi digitali.</li>
+                                <li><span class="font-medium">Formazione e Supporto:</span> Fornire formazione per il personale e supporto per gli utenti per garantire un'adozione fluida.</li>
+                                <li><span class="font-medium">Monitoraggio delle Performance:</span> Monitorare continuamente le performance e la soddisfazione degli utenti per apportare le modifiche necessarie.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 6 -->
+                <div class="step-card bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-start">
+                        <div class="bg-indigo-600 text-white rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 mr-4 font-bold">06</div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3">Miglioramento Continuo</h3>
+                            <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                                <li><span class="font-medium">Aggiornamenti Regolari:</span> Mantenere i servizi digitali aggiornati con le ultime funzionalità e miglioramenti della sicurezza.</li>
+                                <li><span class="font-medium">User Coinvolgimento:</span> Mantenere un impegno costante con gli utenti per raccogliere informazioni e migliorare i servizi.</li>
+                                <li><span class="font-medium">Evaluation e reporting:</span> Valutare regolarmente il successo del progetto e riferire i risultati alle parti interessate.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Case Study</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Esempi reali di Design Centrato sull'Utente nei servizi pubblici</p>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
+            </div>
+            
+            <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg">
+                <div class="md:flex">
+                    <div class="md:w-1/3">
+                        <img src="https://images.unsplash.com/photo-1434626881859-194d67b2b86f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1474&q=80" alt="Digital Government" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-8 md:w-2/3">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">Ricostruzione del Portale Tributi Comunale</h3>
+                        <p class="text-gray-600 mb-4">
+                            Un comune italiano ha riprogettato il proprio portale dei servizi tributari seguendo i principi del design centrato sull'utente. Il progetto ha coinvolto:
+                        </p>
+                        <ul class="list-disc pl-5 space-y-2 text-gray-600 mb-6">
+                            <li>Ricerca approfondita con cittadini di diverse fasce d'età e background</li>
+                            <li>Prototipazione iterativa con test di usabilità</li>
+                            <li>Implementazione di strumenti di accessibilità avanzati</li>
+                            <li>Semplificazione del linguaggio burocratico</li>
+                        </ul>
+                        <div class="bg-indigo-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-indigo-700 mb-2">Risultati:</h4>
+                            <p>
+                                <span class="font-medium">+65%</span> di completamento delle procedure online | 
+                                <span class="font-medium">-42%</span> di telefonate all'ufficio tributi | 
+                                <span class="font-medium">92%</span> di soddisfazione utente
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Contattaci</h2>
+                <p class="text-gray-600">Vuoi saperne di più su come migliorare l'UX dei tuoi servizi pubblici?</p>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
+            </div>
+            
+            <div class="bg-white p-8 rounded-xl shadow-md">
+                <form class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nome</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 focus:outline-none transition">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 focus:outline-none transition">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="organization" class="block text-sm font-medium text-gray-700 mb-1">Organizzazione</label>
+                        <input type="text" id="organization" name="organization" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 focus:outline-none transition">
+                    </div>
+                    
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Messaggio</label>
+                        <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 focus:outline-none transition"></textarea>
+                    </div>
+                    
+                    <div>
+                        <button type="submit" class="w-full bg-indigo-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-indigo-700 transition duration-300 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            Invia Richiesta
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <!-- About Column -->
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-4">Design Centrato sull'Utente</h3>
+                    <p class="mb-4">Esperti nel miglioramento dell'esperienza digitale nei servizi pubblici attraverso strategie di design e innovazione centrati sull'utente.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Links Column -->
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-4">Link</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#intro" class="hover:text-white transition">Introduzione</a></li>
+                        <li><a href="#pillars" class="hover:text-white transition">Pilastri Fondamentali</a></li>
+                        <li><a href="#benefits" class="hover:text-white transition">Vantaggi</a></li>
+                        <li><a href="#process" class="hover:text-white transition">Processo</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Column -->
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-4">Contatti</h3>
+                    <address class="not-italic">
+                        <p class="mb-2"><i class="fas fa-map-marker-alt text-indigo-400 mr-3"></i> Via Roma 123, 00100, Roma, Italia</p>
+                        <p class="mb-2"><i class="fas fa-phone-alt text-indigo-400 mr-3"></i> +39 06 12345678</p>
+                        <p><i class="fas fa-envelope text-indigo-400 mr-3"></i> info@uxpublicservices.it</p>
+                    </address>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center">
+                <p>&copy; 2023 UX Public Services. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-indigo-600 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-400">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Form Submission
+        const contactForm = document.querySelector('form');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Grazie per il tuo messaggio! Ti risponderemo al più presto.');
+            contactForm.reset();
+        });
+    </script>
+</body>
+</html>
