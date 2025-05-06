@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Design Revolution</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 24px;
+            top: 36px;
+            height: calc(100% - 36px);
+            width: 2px;
+            background: #e2e8f0;
+        }
+        /* Mobile menu styles */
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .mobile-menu.open {
+            max-height: 500px;
+        }
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Image container for case studies */
+        .image-pair-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            width: 100%;
+        }
+        .case-study-image {
+            height: 400px;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .desktop-image {
+            width: auto;
+            max-width: 70%;
+        }
+        .mobile-image {
+            width: auto;
+            max-width: 25%;
+        }
+        .case-study-text {
+            width: 40%;
+            padding: 1.5rem;
+        }
+        .case-study-images {
+            width: 60%;
+            padding: 1rem;
+        }
+        @media (max-width: 768px) {
+            .case-study-text,
+            .case-study-images {
+                width: 100%;
+            }
+            .desktop-image {
+                max-width: 100%;
+            }
+            .mobile-image {
+                max-width: 40%;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800 bg-gray-50">
+    <!-- Responsive Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <a href="#" class="text-2xl font-bold text-indigo-700">RDR</a>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#what-is" class="text-gray-700 hover:text-indigo-600 transition duration-300">Cos'è</a>
+                    <a href="#history" class="text-gray-700 hover:text-indigo-600 transition duration-300">Storia</a>
+                    <a href="#case-studies" class="text-gray-700 hover:text-indigo-600 transition duration-300">Casi studio</a>
+                    <a href="#why-essential" class="text-gray-700 hover:text-indigo-600 transition duration-300">Importanza</a>
+                    <a href="#technical" class="text-gray-700 hover:text-indigo-600 transition duration-300">Tecnica</a>
+                </nav>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="mobile-menu md:hidden bg-white">
+                <div class="px-2 pt-2 pb-4 space-y-2">
+                    <a href="#what-is" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50">Cos'è</a>
+                    <a href="#history" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50">Storia</a>
+                    <a href="#case-studies" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50">Casi studio</a>
+                    <a href="#why-essential" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50">Importanza</a>
+                    <a href="#technical" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50">Tecnica</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white pt-24 pb-20 md:py-32 px-4">
+        <div class="container mx-auto max-w-6xl text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Come il responsive design ha infranto la barriera</h1>
+            <p class="text-xl md:text-2xl max-w-3xl mx-auto opacity-90">Il responsive design non è solo una tendenza tecnologica, ma una filosofia di progettazione centrata sull'utente.</p>
+            <div class="mt-12">
+                <a href="#content" class="inline-block bg-white text-indigo-700 font-semibold px-8 py-3 rounded-full hover:bg-gray-100 transition duration-300">
+                    Scopri di più
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main id="content" class="container mx-auto max-w-6xl px-4 py-12 md:py-20">
+        <!-- What is Responsive Design -->
+        <section id="what-is" class="mb-20 scroll-mt-20">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900">Che cos'è il RESPONSIVE DESIGN?</h2>
+            <div class="flex flex-col lg:flex-row gap-8 items-center">
+                <div class="lg:w-1/2">
+                    <p class="text-lg text-gray-700 mb-6">Il responsive design è un approccio al web design que consente a un sito web di regolare automaticamente il layout e le dimensioni degli elementi su diversi dispositivi (ad esempio, computer, tablet e telefoni cellulari) per garantire all'utente la migliore esperienza di navigazione possibile.</p>
+                    <p class="text-lg text-gray-700">L'obiettivo del responsive design è quello di "adattare il sito web al dispositivo" piuttosto che chiedere all'utente di adattare il sito web.</p>
+                </div>
+                <div class="lg:w-1/2 lg:ml-8">
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <div class="flex-1 bg-blue-50 p-4 rounded-lg">
+                                <div class="text-blue-600 text-4xl mb-3">
+                                    <i class="fas fa-desktop"></i>
+                                </div>
+                                <h3 class="font-bold text-lg mb-2">Desktop</h3>
+                                <p class="text-sm text-gray-600">Layout multi-colonna con ampio spazio</p>
+                            </div>
+                            <div class="flex-1 bg-purple-50 p-4 rounded-lg">
+                                <div class="text-purple-600 text-4xl mb-3">
+                                    <i class="fas fa-tablet-alt"></i>
+                                </div>
+                                <h3 class="font-bold text-lg mb-2">Tablet</h3>
+                                <p class="text-sm text-gray-600">Layout semplificato con elementi ridimensionati</p>
+                            </div>
+                            <div class="flex-1 bg-green-50 p-4 rounded-lg">
+                                <div class="text-green-600 text-4xl mb-3">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </div>
+                                <h3 class="font-bold text-lg mb-2">Mobile</h3>
+                                <p class="text-sm text-gray-600">Contenuto a singola colonna e navigazione compatta</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- History of Responsive Design -->
+        <section id="history" class="mb-20 scroll-mt-20">
+            <h2 class="text-3xl md:text-4xl font-bold mb-10 text-gray-900">La storia del responsive design</h2>
+            <div class="relative">
+                <!-- Timeline -->
+                <div class="space-y-8">
+                    <!-- Timeline Item 1 -->
+                    <div class="timeline-item relative pl-16">
+                        <div class="absolute left-0 top-0 flex items-center justify-center w-12 h-12 rounded-full bg-indigo-100 text-indigo-700">
+                            <i class="fas fa-seedling text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">1994 - I primi approcci</h3>
+                        <p class="text-gray-600">I primi tentativi di design adattivo con tabelle HTML che si adattavano alle dimensions dello schermo.</p>
+                    </div>
+                    
+                    <!-- Timeline Item 2 -->
+                    <div class="timeline-item relative pl-16">
+                        <div class="absolute left-0 top-0 flex items-center justify-center w-12 h-12 rounded-full bg-indigo-100 text-indigo-700">
+                            <i class="fas fa-mobile text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">2007 - La rivoluzione mobile</h3>
+                        <p class="text-gray-600">L'iPhone cambia tutto, costringendo i designer a ripensare il web per schermi più piccoli.</p>
+                    </div>
+                    
+                    <!-- Timeline Item 3 -->
+                    <div class="timeline-item relative pl-16">
+                        <div class="absolute left-0 top-0 flex items-center justify-center w-12 h-12 rounded-full bg-indigo-100 text-indigo-700">
+                            <i class="fas fa-book text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">2010 - Ethan Marcotte</h3>
+                        <p class="text-gray-600">L'articolo seminale "Responsive Web Design" di Ethan Marcotte introduce il concetto moderno.</p>
+                    </div>
+                    
+                    <!-- Timeline Item 4 -->
+                    <div class="timeline-item relative pl-16">
+                        <div class="absolute left-0 top-0 flex items-center justify-center w-12 h-12 rounded-full bg-indigo-100 text-indigo-700">
+                            <i class="fas fa-star text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">2015 - Mobile-first</h3>
+                        <p class="text-gray-600">Google annuncia che i siti mobile-friendly avranno priorità nei risultati di ricerca.</p>
+                    </div>
+                    
+                    <!-- Timeline Item 5 -->
+                    <div class="timeline-item relative pl-16">
+                        <div class="absolute left-0 top-0 flex items-center justify-center w-12 h-12 rounded-full bg-indigo-100 text-indigo-700">
+                            <i class="fas fa-globe text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Oggi - Standard globale</h3>
+                        <p class="text-gray-600">Il responsive design è diventato lo standard per lo sviluppo web moderno.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Case Studies -->
+        <section id="case-studies" class="mb-20 scroll-mt-20">
+            <h2 class="text-3xl md:text-4xl font-bold mb-10 text-gray-900">Casi studio di responsive design</h2>
+            
+            <!-- Airbnb -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden mb-12">
+                <div class="flex flex-col md:flex-row">
+                    <div class="case-study-text">
+                        <div class="uppercase tracking-wide text-sm text-indigo-600 font-semibold mb-1">Servizi</div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Airbnb</h3>
+                        <p class="text-gray-600 mb-6">Sui desktop i pulsanti sono in alto, mentre nella versione mobile diventano un menu principale in basso, più comodo per l'uso su smartphone. Il sito mobile è altamente coerente con l'app.</p>
+                        <div class="flex items-center">
+                            <div class="mr-4 text-yellow-400">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="text-gray-600">Esempio perfetto di UX cross-device</span>
+                        </div>
+                    </div>
+                     <div class="case-study-images bg-gray-50 p-4 overflow-x-auto">
+                        <div class="flex gap-4 w-max">
+                          <img src="https://huggingface.co/spaces/marcolissimo/web-design-2025-4/resolve/main/Airbnb%20Desktop.png"
+                                    alt="Airbnb Desktop"
+                                    class="h-64 object-contain flex-shrink-0">
+                          <img src="https://huggingface.co/spaces/marcolissimo/web-design-2025-4/resolve/main/Airbnb%20Mobile.png"
+                                    alt="Airbnb Mobile"
+                                    class="h-64 object-contain flex-shrink-0">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Starbucks -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden mb-12">
+                <div class="flex flex-col md:flex-row-reverse">
+                    <div class="case-study-text">
+                        <div class="uppercase tracking-wide text-sm text-green-600 font-semibold mb-1">Promozione</div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Starbucks</h3>
+                        <p class="text-gray-600 mb-6">I pulsanti in alto sul desktop vengono sostituiti dal classico menu hamburger nella versione mobile.</p>
+                        <div class="flex items-center">
+                            <div class="mr-4 text-green-500">
+                                <i class="fas fa-check-circle text-xl"></i>
+                            </div>
+                            <span class="text-gray-600">Navigazione semplificata per mobile</span>
+                        </div>
+                    </div>
+                           <div class="case-study-images bg-gray-50 p-4 overflow-x-auto">
+                              <div class="flex gap-4 w-max">
+                                 <img src="https://huggingface.co/spaces/marcolissimo/web-design-2025-4/resolve/main/Starbucks%20Desktop.png"
+                                           alt="Starbucks Desktop"
+                                           class="h-64 object-contain flex-shrink-0">
+                                 <img src="https://huggingface.co/spaces/marcolissimo/web-design-2025-4/resolve/main/Starbucks%20Mobile.png"
+                                           alt="Starbucks Mobile"
+                                           class="h-64 object-contain flex-shrink-0">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Perspective -->
+        <section class="mb-20 bg-indigo-50 rounded-xl p-8 md:p-12">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900 text-center">Cosa pensiamo</h2>
+            <div class="max-w-3xl mx-auto text-center">
+                <p class="text-xl text-gray-700 mb-8">Per noi il responsive design rappresenta il nostro rispetto per le diverse esigenze degli utenti e la nostra ricerca della qualità nelle moderne esperienze digitales.</p>
+                <div class="inline-flex items-center bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full">
+                    <i class="fas fa-heart mr-2"></i>
+                    <span>Design centrato sull'utente</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Essential -->
+        <section id="why-essential" class="mb-20 scroll-mt-20">
+            <h2 class="text-center text-2xl md:text-3xl font-bold mb-10 text-gray-900"">Perché il design reattivo è ormai essenziale</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover transition duration-300">
+                    <div class="p-6">
+                        <div class="text-blue-600 text-4xl mb-4">
+                            <i class="fas fa-mobile-screen"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Dominio mobile</h3>
+                        <p class="text-gray-600">Oltre il 55% degli utenti naviga da smartphone. Un sito non ottimizzato per il mobile rischia di perdere visite.</p>
+                    </div>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover transition duration-300">
+                    <div class="p-6">
+                        <div class="text-green-600 text-4xl mb-4">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Google premia</h3>
+                        <p class="text-gray-600">I motori di ricerca danno priorità ai siti responsivi, migliorando la visibilità online.</p>
+                    </div>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover transition duration-300">
+                    <div class="p-6">
+                        <div class="text-purple-600 text-4xl mb-4">
+                            <i class="fas fa-share-alt"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Traffico social</h3>
+                        <p class="text-gray-600">La maggior parte dei click da social come Instagram e TikTok avviene da smartphone: se il sito è lento o confuso, gli utenti se ne andranno subito.</p>
+                    </div>
+                </div>
+                
+                <!-- Card 4 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover transition duration-300">
+                    <div class="p-6">
+                        <div class="text-yellow-600 text-4xl mb-4">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Prepararsi al futuro</h3>
+                        <p class="text-gray-600">Il design reattivo funziona anche con dispositivi futuri come smartwatch, TV smart e schermi pieghevoli, mantenendo il sito sempre attuale e competitivo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Aspects -->
+        <section id="technical" class="mb-20 scroll-mt-20">
+            <h2 class="text-3xl md:text-4xl font-bold mb-10 text-gray-900">Aspetti tecnici</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Left Column -->
+                <div>
+                    <div class="bg-white p-6 rounded-xl shadow-md mb-6">
+                        <h3 class="text-xl font-bold mb-4 text-indigo-700 flex items-center">
+                            <i class="fas fa-desktop mr-2"></i>
+                            Adattamento ai diversi schermi
+                        </h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span>Usa dimensioni flessibili per campi e contenitori</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span>Imposta valori massimi e minimi per margini, padding e larghezze</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span>Su schermi piccoli, i campi devono occupare tutta la larghezza</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span>Su schermi grandi, evita i campi troppo lunghi: usa contenitori centrati con margini flessibili</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h3 class="text-xl font-bold mb-4 text-indigo-700 flex items-center">
+                            <i class="fas fa-font mr-2"></i>
+                            Tipografia ed errori
+                        </h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span>Evita margini e font fissi: su schermi ampi i campi potrebbero diventare troppo larghi</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span>Messaggi di errore devono essere chiari, brevi e non invadenti</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span>Usa breakpoint per adattare i testi in base alla dimensione dello schermo</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span>Le etichette (label) non devono essere troncate né andare a capo</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Right Column -->
+                <div>
+                    <div class="bg-white p-6 rounded-xl shadow-md mb-6">
+                        <h3 class="text-xl font-bold mb-4 text-indigo-700 flex items-center">
+                            <i class="fas fa-align-left mr-2"></i>
+                            Campi lunghi (es. commenti)
+                        </h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span>In caso di inserimento di molto testo, il contenuto deve andare a capo automaticamente</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span>Se necessario, aggiungi uno scroll verticale per mantenere leggibilità</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h3 class="text-xl font-bold mb-4 text-indigo-700 flex items-center">
+                            <i class="fas fa-lightbulb mr-2"></i>
+                            Soluzioni consigliate
+                        </h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span>Test visivo accurato e feedback da parte degli utenti</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span>Seguire le linee guida di Material Design</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span>Utilizzare Flexbox o CSS Grid (layout verticale)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span>Breakpoint e dimensioni minime/massime (max-width, min-width)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span>Padding e margini per il focus visivo</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span>Tastiere virtuali adatte e supporto per screen reader</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conclusion -->
+        <section class="mb-20 text-center">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900">Conclusione</h2>
+                <p class="text-xl text-gray-700">Ogni form va progettato in base al contesto e all'utente. Un buon design responsive rende i text-form accessibili, chiari e funzionali su qualsiasi dispositivo.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-12 pb-10">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between">
+                <!-- About -->
+                <div class="mb-8 md:mb-0 md:w-1/3">
+                    <h3 class="text-xl font-bold mb-4">Responsive Design Revolution</h3>
+                    <p class="text-gray-400 mb-4">Il futuro del web design è responsive. Scopri come adattare il tuo sito a tutti i dispositivi.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="mb-8 md:mb-0">
+                    <h3 class="text-xl font-bold mb-4">Link rapidi</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="#what-is" class="text-gray-400 hover:text-white transition duration-300">Cos'è il Responsive Design</a></li>
+                        <li><a href="#case-studies" class="text-gray-400 hover:text-white transition duration-300">Casi studio</a></li>
+                        <li><a href="#technical" class="text-gray-400 hover:text-white transition duration-300">Aspetti tecnici</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="md:w-1/3">
+                    <h3 class="text-xl font-bold mb-4">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Iscriviti per ricevere aggiornamenti sul responsive design.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="La tua email" class="px-4 py-2 rounded-l focus:outline-none text-gray-900 w-full">
+                        <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-r transition duration-300">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-gray-800 mt-10 pt-6 text-center text-gray-400">
+                <p>&copy; 2023 Responsive Design Revolution. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+            
+            // Change icon based on menu state
+            if (mobileMenu.classList.contains('open')) {
+                mobileMenuButton.innerHTML = '<i class="fas fa-times text-2xl"></i>';
+            } else {
+                mobileMenuButton.innerHTML = '<i class="fas fa-bars text-2xl"></i>';
+            }
+        });
+
+        // Close mobile menu when clicking on a link
+        const mobileMenuLinks = document.querySelectorAll('#mobile-menu a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                mobileMenuButton.innerHTML = '<i class="fas fa-bars text-2xl"></i>';
+            });
+        });
+
+        // Smooth scrolling for all links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=grazia123/webdesign1" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>
